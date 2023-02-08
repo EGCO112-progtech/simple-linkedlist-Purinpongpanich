@@ -73,7 +73,7 @@ int main(int argc, const char * argv[]) {
   
     temp p = (temp)malloc(sizeof(Node));
     head = p;
-    int z=5;
+    int z=4;
     p->value = c;
     for(int i=0 ; i<z;i++){
       p->next= (temp)malloc(sizeof(Node));
@@ -85,17 +85,19 @@ int main(int argc, const char * argv[]) {
     NodePtr tmp=head;
   
     while(tmp != NULL){
-      printf("%3d", tmp->value);
+      printf("%3d ->", tmp->value);
       tmp=tmp->next;
       }
+    printf(" NULL");
     
     /*  Exercise VI Free all node !!
          //use a loop to help
           
      */
+    p = head;
     while(tmp != NULL){
-      tmp = head;
-      head = head->next;
+      tmp = p;
+      p = p->next;
       free(tmp);
       }
     
