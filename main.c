@@ -7,7 +7,8 @@ int main(int argc, const char * argv[]) {
     struct node a,b,*head ;
     typedef struct node Node;
     typedef Node* temp;
-  
+
+  //create node
     temp p = (temp)malloc(sizeof(Node));
     head = p;
     int z=4;
@@ -18,6 +19,7 @@ int main(int argc, const char * argv[]) {
       p = p->next;
     }
   
+  //print all node
     typedef struct node* NodePtr;
     NodePtr tmp=head;
   
@@ -26,9 +28,10 @@ int main(int argc, const char * argv[]) {
       tmp=tmp->next;
       }
     printf(" NULL");
-    
+
+  //free all node
     p = head;
-    while(tmp != NULL){
+    while(p != NULL){
       tmp = p;
       p = p->next;
       free(tmp);
